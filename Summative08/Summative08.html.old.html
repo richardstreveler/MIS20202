@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+        PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+        Formative00 split into 3 separate html files instead of using tabs, too unwieldly
+		PgP 7/17/2020  Final version, with all updates for fall 2020
+		-->
+
+    <!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS202 Summative08</title>
+
+</head>
+
+
+<body>
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+		<h1 class=" text-center">Virtualization and Cloud Computing</h1>
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="Summative08"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>		<!-- -end-Student, class and assignment information-end -->
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			1050 Points
+            <hr />
+		</div>
+
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+
+
+			<p>
+				This assignment introduces cloud based applications and virtualization. You are encouraged to explore on your own to find additional   features that will make your life and present or future jobs easier.<br />
+				After completing this assignment you will be able to use a cloud application and virtualization to
+			</p>
+			<ul>
+				<li>create documents, spreadsheets and presentations</li>
+				<li>embed cloud presentations in web pages</li>
+				<li>create a cloud spreadsheet that can pull search data from the web for real-time results</li>
+				<li>use a virtualization program</li>
+				<li>understand  the business uses of virtual machines</li>
+			</ul>
+			<p>The exercises in this assignment should be done in the order presented in the Cloud Applications and Virtualization sections.</p>
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+
+		<div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+		<div id="Overview" class="collapse in  col-lg-12">
+
+			<p>
+				The purpose of this assignment is to learn how businesses and other entities are making use of 'cloud computing' and adopting virtualization technology. You can use cloud or web based software to accomplish many of the same tasks that you can with desktop software (remember Microsoft Office?).
+                <br />
+				So why move to the cloud?  Your applications are available from multiple computers and devices (tablets, smart phones, laptops).  The cost is less-perhaps free. Software updates are no longer a hassle. The main downside is that cloud applications may not have all the bells and whistles (functionality) of massive desktop application.
+			</p>
+			<p>Virtualization comes in many forms. We will examine operating system virtualization. But you can also virtual applications and storage. Virtualization is a way to save time and money, check software updates quickly before they are rolled out, provide sand boxed environments, among other things.</p>
+			<p>Some other thing to consider   are:</p>
+			<ul>
+				<li>Why should a business explore cloud applications (see <a href="http://docs.google.com" class="bg-info text-white" target="_blank">Google Docs</a> and <a href="https://livewinona-my.sharepoint.com/" class="bg-info text-white" target="_blank">Microsoft Office 365</a>)?</li>
+				<li>What are the benefits of cloud based computing?</li>
+				<li>What are the risks of cloud based computing?</li>
+				<li>How does a business determine if cloud based computing is right for them?</li>
+				<li>What is virtualization?</li>
+				<li>Can my business benefit from virtualization?</li>
+				<li>What are the costs and benefits of virutalization?</li>
+			</ul>
+			<hr />
+		</div>
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Cloud Applications-Google Drive</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+
+			<p>
+				Sign up for a <a href="https://docs.google.com" class="bg-info text-white" target="_blank">Google Drive account, if you do not already have one.</a>.<br />
+
+				<br />
+				<img src="images/GoogleDocs.PNG" class="img-fluid img-responsive img-rounded" alt="Google docs" />
+			</p>
+
+			<hr />
+			<br />
+
+			<p>
+				For this exercise you must upload or create a  document, a spreadsheet and a presentation using GoogleDocs.
+                <br />
+				Feel free to use files from prior  assignments, such as your resume, a presentation or a spreadsheet. Or create new ones. 
+                <br />
+				When done publish  the document to the Internet, and then Share it to make itaccessible by Professor Paulson.
+                <br />
+				Use my &quot;ppaulson@winona.edu&quot; email address shown below.<br />
+				<img src="images/GoogleDocsPublish.png" class="img-fluid img-responsive img-rounded" alt="publish google doc" />
+				<br />
+				Check the 'To view' radio button because I only need to view and not need to edit your pages.<br />
+				<img src="images/ProfAccess.gif" class="img-fluid img-responsive img-rounded" alt="prof access" /><br />
+			</p>
+			<p><strong>Take a screen shot of each Google file created below.</strong> </p>
+
+			<p>
+				Note: In a web browser the urls in the address bar will look something like:<br />
+				https://docs.google.com/present/edit?id=0Aeu0JEemykWaZDl0NnJmNV81Nmhubm45c2hi&amp;hl=en)
+			</p>
+
+			<p><a href="https://docs.google.com/Doc?id=d9t6rf5_2gqnfvd" class="bg-info text-white" target="_blank">SampleGoogleDoc</a> </p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+
+			<h2>1. (50) Screen Shot-EX1 MyGoogleDoc </h2>
+			<h2>2. (50) Screen Shot-EX1 MyGoogleSpreadsheet</h2>
+			<h2>3. (50) ScreenShot-Ex1 MyGooglePresentation</h2>
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Embedding Cloud Application Files</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+			<p>
+				You are going to learn to embed a Google Presentation into an&nbsp; html file.<br />
+				Please read this entire exercise before beginning
+			</p>
+			<hr />
+			<p>Note: if you uploaded a PowerPoint file to Google Docs, you must first convert it to a Google Slide format before proceeding:</p>
+			<p>
+				<img src="images/GoogleSlide.JPG" class="img-responsive" alt="Google Slide" />
+			</p>
+			<p>
+				Refer to File&gt;Publish to the Web... &nbsp;&nbsp;and follow the instructions.
+                <br />
+				Choose an appropriate size.<br />
+			</p>
+
+
+			<!-- 5/4/2020 PgP submit embed code for online course
+			<hr />
+			Be careful of the settings you choose when you place your html code into the &lt;div&gt; tags below:
+      <p>
+		  <img src="EmbedPresentationDialogBox.jpg" alt="embed in google" class="img-responsive" />
+	  </p>
+			<hr />
+			<br />
+
+			<div id="div"></div>
+			<div class="bg-info text-white text-center">
+				<h3>Note: when done with this exercise, your embedded presentation must appear below this line.</h3>
+			</div>
+			<br />
+
+
+			<div>
+			</div>
+
+
+			<div class="bg-info text-white text-center">
+				<h3>Note: when done with this exercise, your embedded presentation must appear above this line.</h3>
+			</div>
+			<br />
+			<hr />
+
+			In Visual Studio, switch to Source view and embed your Google presentation in the &lt;div&gt; tags below by copying the &quot;&lt;iframe...&quot; code from your Google presentation file that you published to the web.<br />
+			<img src="DivTags.JPG" class="img-responsive" alt="div tags" /><br />
+-->
+
+			<p>
+				<strong>(100)</strong> 4. Make a screen shot showing your Google Presentation Embed Code.<br />
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="Path1"></span></code>
+				' folder.<br />
+
+			</p>
+
+			<div class="col-lg-12 text-danger">
+				<h2>Screen Shot Ex2 of Embed Code</h2>
+				<hr />
+			</div>
+
+			<br />
+
+			<!-- PgP 5/4/2020 below not needed for screen shot submission
+
+			<p>
+				Note that when checking your copy of this homework on your classes.winona.edu web site you are doing so over a secure (https) connection.
+                <br />
+				The embedded presentations will not be displayed unless you answer NO to the following prompt:<br />
+				<img src="EmbeddedHttpsWarning.gif" alt="Avoid this warning, select NO" class="img-responsive" />
+			</p>
+			<p>
+				Below is a sample of an embedded presentation.<br />
+				Note that it will appear as a gray box in Visual Studio. It does not appear as a link until published to your webiste and viewed in a web browser.
+			</p>
+
+			<div>
+				<iframe src="https://docs.google.com/presentation/d/12KA5OwDDPxLM2BWOeoYk8WN3bvzs8cr5D6TiUWSHVBA/embed?start=false&loop=false&delayms=3000" class="img-responsive"></iframe>
+			</div>
+-->
+
+			<hr />
+
+		</div>
+
+
+
+
+		<div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Google Spreadsheets</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<p>Create a Google Document Spreadsheet that uses the <a href="https://docs.google.com/support/bin/answer.py?answer=155178" class="bg-info text-white" target="_blank">GoogleFinance function</a> to find the share prices and number of shares outstanding for the following stocks:</p>
+			<p>
+				GOOG-Google<br />
+				IBM-<br />
+				F-Ford<br />
+				MSFT-Microsoft<br />
+				GRPN-Groupon<br />
+				AAPL-Apple
+			</p>
+			<p>
+				Based on the information you collected, determine which of these stocks has the largest <a href="https://en.wikipedia.org/wiki/Market_capitalization" class="bg-info text-white" target="_blank">market capitalization</a>.<br />
+			</p>
+
+
+			<p>
+				<strong>(100)</strong> 5. Create a set of formulas in your spreadsheet to determine the market capitalization of each stock.
+                <br />
+				Answer the following question: Which company has the largest market capitalization, and what is the current market capitalization, in dollars ?<br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input type="text" name="q5" id="q5" size="120" maxlength="120" class="form-control" value="company with largest marketcap:  , market cap: $  " />
+			</p>
+
+			<p>From the menu choose View&gt;All formulas and display formulas, not values.</p>
+
+			<br />
+			<p>
+				<strong>(100)</strong> 6. Make a screen shot showing your Google Spreadsheet displaying formulas (View&gt;All formulas), not values.<br />
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex3&quot; in your ' 
+                <code><span id="Path2"></span></code>
+				' folder.<br />
+
+			</p>
+
+
+		</div>
+
+
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex3</h2>
+			<hr />
+		</div>
+
+
+
+
+
+		<div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Virtualization- </a></div>
+
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>Review <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" class="bg-info text-white" target="_blank">Virtualization on Windows</a>.</p>
+
+			<p>
+				Watch the beginning of this video for an overview of the VMware vSphere system. <a href="https://www.linkedin.com/learning/vmware-vsphere-6-5-essential-training-part-1/virtualization-basics" class="bg-info text-white" target="_blank">Virtualization Basics</a>.
+			</p>
+
+
+
+<!-- PgP 5/4/2020 cannot do virtualization in online class
+
+			<p>
+				This exercise will severely task your computer resources.<br />
+				Turn off any program not needed, and make sure you hook up your power supply, otherwise your computer will be slow.
+			</p>
+			<p>Enable Hyper-V on your Windows 10 machine before proceeding.&nbsp; </p>
+			<p>Click Start, type in &quot;Turn Windows Features on or off&quot;, and enable both Hyper-V features:</p>
+			<p>
+				<img alt="enable Hyper-V" class="img-responsive" src="EnableHyperV.JPG" />
+			</p>
+			<hr />
+			<p>
+				Obtain the Ubuntu .iso image file. This is best done on-campus. From off-campus you must use <a href="https://learn.winona.edu/VPN" class="bg-info text-white" target="_blank">VPN</a>.&nbsp; Depending on your internet connection, it could take a lot of time to download a 1GB file!
+			</p>
+			<p>
+				Open File Explorer and navigate to the following location:&nbsp; \\mispgp\ISO_Images 
+                <br />
+				For more information see this url: 
+    <a href="http://www.dummies.com/computers/pcs/mapping-a-network-drive-on-your-windows-10-pc/" class="bg-info text-white" target="_blank">http://www.dummies.com/computers/pcs/mapping-a-network-drive-on-your-windows-10-pc/</a>
+				<br />
+				After you click the 'Map Network Drive' button, enter &quot;<a href="file://mispgp/ISO_Images">\\mispgp\ISO_Images</a>&quot; for the folder.
+			</p>
+			<p>
+				Copy this file to a suitable location on your laptop, such as your Downloads folder.&nbsp; Do NOT put it into your website.
+			</p>
+			<hr />
+			<p>
+				<br />
+				You will use Hyper-V to configure and install a <a href="https://help.ubuntu.com/community/LiveCD" class="bg-info text-white" target="_blank">LiveCD</a> version of <a href="https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes" class="bg-info text-white" target="_blank">Ubuntu Linux 14.04.5 LTS </a>&nbsp;
+                <br />
+				This means that the virtual machine(vm) will not be installed permanently on your computer.&nbsp;&nbsp; But as long as you keep the .iso file you can start up a new copy of the vm.&nbsp;
+                <br />
+				You could copy the .iso image file to a USB disk and boot from there.&nbsp;<br />
+				But that vm will run very slowly.
+			</p>
+			<p>When you have your vm running, you will change some settings and make a screen shot of your Ubuntu vm with a specific configuration.</p>
+			<hr />
+			<p>&nbsp;</p>
+			<ol type="a">
+				<li>Open Hyper-V, and from in the right column under Actions select &quot;Virtual Switch Manager&quot;</li>
+				<li>Select 'External' virtual switch and give it a name of &quot;HyperV Virtual Switch&quot;,
+                    <br />
+					connect to the External Network using an appropriate setting-whatever you are currently using on your laptop for a network connection.<br />
+					<img src="HyperV/VirtualSwitch.JPG" class="img-responsive" alt="hyper-v switch" />
+					<br />
+				</li>
+
+				<li>Click &quot;Apply&quot;, read and understand the warning,&nbsp; then click &quot;OK&quot;.</li>
+				<li>&nbsp;click in the &quot;Virtual Machines&quot; window, then from the menu select Action&gt;New&gt;Virtual Machine...</li>
+				<li>You will run the &quot;New Virtual Machine Wizard&quot;.&nbsp; Please read the steps carefully at the first screen &quot;Before You Begin&quot;, then press &quot;Next&quot;<br />
+					<img src="HyperV/VM_NameAndLocation.JPG" class="img-responsive" alt="create vm" />
+					<br />
+				</li>
+				<li>Enter an appropriate name, then press &quot;Next&gt;&quot;</li>
+				<li>On the &quot;Specify Generation&quot; screen select &quot;Generation 2&quot; then press &quot;Next&gt;&quot;</li>
+				<li>On the &quot;Assign Memory&quot; screen enter 1024 and uncheck &quot;Use Dynamic Memory for this virtual machine&quot;</li>
+				<li>On the &quot;Configure Networking&quot; screen, for the Connection select &quot;HyperV Virtual Switch&quot;, then press &quot;Next &gt;&quot;</li>
+				<li>On the &quot;Connect Virtual Hard Disk&quot; screen, select &quot;Create a virtual hard disk&quot;, enter an appropriate name, accept the default &quot;Location&quot;, and enter 1GB for the size, then press &quot;Next &gt;&quot;.<br />
+					<img src="HyperV/VirtualHardDisk.JPG" class="img-responsive" alt="create virtual hard disk" /><br />
+				</li>
+
+				<li>On the &quot;Installation Options&quot; screen choose &quot;Install an operating system from a bootable image file&quot;,&nbsp;
+                    <br />
+					and use the Browse button to point to the Ubuntu .iso image file that you downloaded from <a href="file://mispgp">\\mispgp</a>.&nbsp;
+                    <br />
+					Then click the &quot;Next &gt;&quot; button.<br />
+					<img src="HyperV/InstallationOptions.JPG" class="img-responsive" alt="boot from ubuntu .iso" /><br />
+				</li>
+
+				<li>Review your choices on the Summary screen, use the &lt; Previous button to make any changes, then when you are satisfied press &quot;Finish&quot;.</li>
+
+				<li>Several message boxes will flash on the screen.&nbsp;
+                    <br />
+					Then you will see your new vm listed in the Hyper-V Manager &quot;Virtual Machines&quot; listing.<br />
+					<img src="HyperV/HyperVMachinesListing.JPG" class="img-responsive" alt="vm created" /><br />
+				</li>
+
+
+				<li>Select your Ubuntu vm from the list, it will then show up in the right side under &#39;Actions&#39;.&nbsp; Double click &#39;Connect...&#39; and you will be presented with a vm.<br />
+					<br />
+					<img src="HyperV/Connect.JPG" class="img-responsive" alt="double click to start vm" />
+					<br />
+				</li>
+
+				<li>Click start.<br />
+					<img src="HyperV/vmConnection.JPG" class="img-responsive" alt="connect to vm" />
+					<br />
+				</li>
+
+				<li>If you see a message that &quot;No operating system was loaded...&quot; Turn off the vm by selecting from the Hyper-V menu &quot;Action&gt;Turn Off...&quot;.<br />
+					<img src="HyperV/NoOS_LoadedError.JPG" class="img-responsive" alt="possible error message" />
+					<br />
+				</li>
+				<li>Open the vm &quot;Settings&quot; and under &quot;Security&quot; uncheck &quot;Enable Secure Boot&quot;.<br />
+					<img src="HyperV/DisableSecureBoot.JPG" class="img-responsive" alt="enable secure boot" />
+					<br />
+				</li>
+
+				<li>As the vm boots, select the first option &quot;Try Ubuntu without installing&quot; and press Enter.
+                    <br />
+					<img src="HyperV/WithoutInstalling.JPG" class="img-responsive" alt="boot ubuntu" /><br />
+				</li>
+				<li>Spend time examining and exploring the Ubuntu vm.<br />
+					It is a popular Linux distribution.<br />
+				</li>
+
+				<li>At a minimum, change the&nbsp; &quot;Time &amp; Date&quot; to Central Time,&nbsp; and Clock&nbsp; settings...&quot; in the upper right corner as shown here:<br />
+					<img src="HyperV/TimeAndDate.JPG" class="img-responsive" alt="set data and time" />
+					<br />
+				</li>
+
+
+
+				<li>Open Firefox, browse to &quot;https://news.google.com&quot; and make a screen shot from the Virtual Machine Connection menu by selecting Clipboard&gt;Capture Screen </li>
+				<li>Open&nbsp; a blank Word document, press Ctrl+V to paste the vm screen shot.</li>
+				<li>Right click the screen shot and choose &quot;Save as Picture...&quot; and place the file in the same folder as other screen shots for this assignment.</li>
+				<li>When done exploring, the shut down button is in the upper right corner.</li>
+				<li>In Hyper-V Virtual Machine Connection menu choose &quot;Action&gt;Turn Off ...: and ignore any warnings.<br />
+				</li>
+			</ol>
+
+
+			<p>&nbsp;</p>
+
+
+-->
+
+			<hr />
+
+
+			<p>
+				<strong>(50)</strong> 7. What is a benefit to a business of using virtual machines?<br />
+				Ref: <a href="http://en.wikipedia.org/wiki/Virtual_machine" class="bg-info text-white" target="_blank">http://en.wikipedia.org/wiki/Virtual_machine</a><br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input type="text" name="q6" id="q6" size="120" maxlength="120" class="form-control" value="vm benefit?:  " />
+			</p>
+
+
+			<br />
+			<p>
+				<strong>(300)</strong>8. Make a screen shot of any part of a LinkedIn learning course or video on virtualization.<br />
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex4&quot; in your ' 
+                <code><span id="Path3"></span></code>
+				' folder.<br />
+
+			</p>
+
+
+		</div>
+		<div class="col-lg-12 text-danger">
+			<h2>Screen Shot Ex4</h2>
+			<hr />
+		</div>
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                 <code><span id="Path4"></span></code>
+				' folder.<br />
+			</p>
+			<br />
+
+			<p>
+				<strong>(50)</strong> 9. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="Path5"></span></code>
+				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path20"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+			<p>
+				<strong>(50)</strong>  10. Save your file 'ScreenShots.pdf' to the ' 
+                <code><span id="Path6"></span></code>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill or PDF Preview(Mac) to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative08.pdf&#39; in ' 
+                 <code><span id="Path7"></span></code>
+				' folder.<br />
+
+			</p>
+
+
+			<p><strong>(50)</strong>  11. Upload your file 'Summative08.pdf' to the D2L 'Summative08' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Summative08.pdf</h2>
+			</div>
+			<hr />
+
+		</div>
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			<strong>(50)</strong>  12. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			<strong>(50)</strong>  13. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>
