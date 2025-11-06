@@ -1,0 +1,638 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+        PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+        Formative00 split into 3 separate html files instead of using tabs, too unwieldly
+		PgP 7/17/2020  Final version, with all updates for fall 2020
+		-->
+
+    <!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS202 Summative09</title>
+
+</head>
+
+
+<body>
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+		<h1 class=" text-center">Geographic Information Systems</h1>
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="Summative09"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>		<!-- -end-Student, class and assignment information-end -->
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			950 Points
+            <hr />
+		</div>
+
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+
+
+			<p>This assignment will cover a variety of ways to use GIS application to work with location data. You are encouraged to explore on your own to find additional   features that will make your life and present or future jobs easier. Men will benefit once they understand that thanks to GPS devices, they will never have to ask for directions again.</p>
+			<p>After completing this assignment you will be able to use a GIS application to</p>
+			<ul>
+				<li>find a location on the earth given a latitude and longitude</li>
+				<li>find the latitude and longitude of a specific location on the earth</li>
+				<li>define geographic territories and layers</li>
+				<li>validate street addresses</li>
+				<li>work with demographic to determine a business site location</li>
+				<li>develop an appreciation for spatial awareness</li>
+				<li>combine numerical or textual and spatial data in a mashup</li>
+			</ul>
+			<p>
+				The exercises in this assignment should be done in the order presented.<br />
+				For a background on the history of navigation and time, check out this article from the Smithsonian:  <a href="http://timeandnavigation.si.edu/" class="bg-info text-white" target="_blank">Getting From Here to There</a>
+			</p>
+			<p>If you enjoy working with geographic information systems, be aware that you can pursue a <a href="http://www.smumn.edu/graduate-home/areas-of-study/graduate-school-of-business-technology/ms-in-geographic-information-science" class="bg-info text-white" target="_blank">Master's Degree in GIS</a> at St. Mary's University of Winona. Several alumni have done this.</p>
+			<hr />
+
+		</div>
+
+		<div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+		<div id="Overview" class="collapse in  col-lg-12">
+
+
+			<p>The purpose of this assignment is to learn how businesses and other entities can benefit from an understanding of GIS and GIS  software. Most cell phones are becoming location aware. Learn how this can allow a business to improve existing services and offer new ones.  Some other things to consider   are:</p>
+			<ul>
+				<li>What are  latitude and longitude and why should I care?</li>
+				<li>Does my business already have location information that it is not using?</li>
+				<li>What opportunities are there to leverage our location data?</li>
+				<li>What can GIS software do for our business?</li>
+				<li>How can I keep ahead of my customers who are GIS savvy?</li>
+			</ul>
+			<hr />
+		</div>
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Latitude and Longitude</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+
+			<p>
+				Read this Wikipedia article to brush up on the concept of <a href="http://en.wikipedia.org/wiki/Geographic_coordinate_system" class="bg-info text-white" target="_blank">Geographic Coordinate Systems</a>.<br>
+				Review <a href="https://www.linkedin.com/learning/real-world-gis/working-with-scale-and-graticules" class="bg-info text-white" target="_blank">this material</a> at LinkedIn Learning from the 'Real-World GIS' tutorial to get a better understanding of latitude and longitude.<br>
+				Refer to <a href="http://www.satsig.net/degrees-minutes-seconds-calculator.htm" class="bg-info text-white" target="_blank">this url</a> to convert from DMS to decimal degrees.
+			</p>
+			<p>
+				syntax: latitude, longitude<br />
+				latitude is north (+) or south (-) and has values from -90 to +90<br />
+				longitude is east (+) of west (-)  and has values from -180 to +180
+			</p>
+
+			<p>Note: North and East are positive, South and West are negative.</p>
+			<p>Then use your knowledge to answer the following questions.</p>
+
+			<p>
+				<strong>(50)</strong>   1.  What is the latitude of Winona, MN?<br />
+				-91.64 or 91.64 or -44.048 or 44.048
+			</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input type="text" name="q1" id="q1" size="120" class="form-control" maxlength="120" value="Winona, MN latitude: ">
+
+			<p>
+				<strong>(50)</strong> 2.  In which hemispheres is Copenhagen, Denmark located?<br />
+				North and West; OR East and West; OR North and East; OR South and West ?
+			</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input type="text" name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Copenhagen hemispheres: ">
+
+			<br />
+
+			<p>
+				What major cities are  located at the following latitude, longitude coordinates? Watch the sign! Feel free to use <a href="http://maps.google.com/" class="bg-info text-white" target="_blank">Google Maps</a>!<br />
+			<strong>(50)</strong> 	3.  31.230393, 121.473704<br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input type="text" name="q3" size="120" maxlength="120" class="form-control" value="what city?" id="q3" />
+			</p>
+			<p>
+			<strong>(50)</strong> 	4. 51.500152, -0.126236<br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input type="text" name="q4" size="120" maxlength="120" class="form-control" value="what city?" id="q4" />
+			</p>
+			<p>
+			<strong>(50)</strong> 	5. -26.204103, 28.047305<br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input type="text" name="q5" size="120" maxlength="120" class="form-control" value="what city?" id="q5" /><br />
+			</p>
+			<hr />
+
+		</div>
+
+
+		<div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Google Earth</a></div>
+
+		<div id="Exercise02" class="collapse in  col-lg-12">
+			<p>Suggested reference, LinkedIn Learning course:&nbsp; <a href="https://www.linkedin.com/learning/foundations-of-geographic-information-systems-gis" class="bg-info text-white" target="_blank">Foundations of GIS</a>    </p>
+
+			<p>Note: you should use Chrome as your browser in order to use Google Earth.</p>
+			<p>
+				Go to Google Earth at:&nbsp; <a href="https://earth.google.com" class="bg-info text-white" target="_blank">https://earth.google.com</a>&nbsp;  <br />
+				Optional: Or you can download and install Google Earth Pro on your desktop if you want to examine advanced features.&nbsp; <a href="https://www.google.com/earth/versions/" class="bg-info text-white" target="_blank">https://www.google.com/earth/versions/</a>&nbsp;
+			</p>
+			<p>
+				&nbsp;</p>
+			<p>reference:&nbsp; <a href="http://www.movable-type.co.uk/scripts/latlong.html" class="bg-info text-white" target="_blank">Calculate distance, bearing and more between two Latitude/Longitude points</a></p>
+			<p>
+				<a href="http://www.movable-type.co.uk/scripts/latlong.html" class="bg-info text-white" target="_blank">http://www.movable-type.co.uk/scripts/latlong.html </a>
+				<br />
+			</p>
+			<hr />
+			<p>
+				For this assignment you must 'fly' from Midway Airport in Chicago, Illinois to Somsen Hall in Winona, MN.<br />
+				The best runway to take off from is at 6300 South Cicero Avenue, Chicago, Illinois.<br />
+				Use Runway 31C, it has a bearing of 310 degrees.
+			</p>
+			<p>Hint: add placemarks on Runway 31C and on Somsen Hall.&nbsp; When you click on one in the sidebar box it will appear on the map, you can use it to get your bearings.</p>
+			<p>For fun try using the flight simulator.</p>
+
+
+			<p>
+				Rotate the compass rose in the upper right corner of Google Earh until runway 31C is straight up and down.<br />
+				Note the top slider controls your angle with respect to vertical.
+			</p>
+			<img src="images/AttitudeControl.gif" alt="Attitude control" class="img-responsive" />
+			<br />
+			The right slider controls your altitude with respect to the ground.&nbsp; Rotate it so you can&nbsp; view the horizon.
+            <br />
+			Your latitude, longitude, ground elevation and altitude appear in the status bar at the bottom.<br />
+			<img src="images/StatusBar.png" class="img-responsive" alt="status bar" />
+			<br />
+			Fly at about 10,000 feet to see landmarks 
+    <div>Ready for take off </div>
+			<br />
+			<img src="images/TakeOff.gif" alt="take off" class="img-responsive" /><br />
+
+
+			Press the up arrow to fly forward.  It should take you about 5 minutes to fly the route. 
+      <br />
+			Head northwest at a bearing of  309 degrees, 47 minutes for about 252 miles
+            <br />
+			<img src="images/GoogleEarthFlying.gif" alt="flying in google earth" class="img-responsive" /><br />
+			On the way take a screen shot in Minnesota.
+            <br />
+			Note you can also save the current view from GoogleEarth as a .jpg file.&nbsp; Use File&gt;Save&gt;Save Image... 
+     <br />
+			<p>
+				<strong>(50)</strong>  6. What is the value to a business of  tools like Google Earth?<br />
+				Feel free to  use  the D2L Discussion Board for Summative09 to discuss your answer with fellow students.<br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input type="text" name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Google Earth value:  " />
+			</p>
+			<p>Note: if you try the 'Fly to' or Search option it will give you a view reminscent of an ICBM /fast drone ride.</p>
+
+
+
+
+
+			<p>
+				<strong>(100)</strong>  7. Make a screen shot of Google Earth anywhere along the flight path in Minnesota. 
+                <br />
+
+				<!--  PgP 2/4/2018 create path using constants and current document assignment -->
+				Save the screen shot  as &quot;Ex2&quot; in your ' 
+                <code><span id="Path1"></span></code>
+				' folder.<br />
+
+			</p>
+
+		</div>
+
+		<div class="col-lg-12 text-danger">
+			<h2>ScreenShot Ex2</h2>
+			<hr />
+		</div>
+
+
+
+		<div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Google Spreadsheet-Mashup</a></div>
+
+		<div id="Exercise03" class="collapse in  col-lg-12">
+
+			<h3 class="text-center">4/7/2014 gadgets were deprecated, instructions revised<br />
+				4/2018 chart options changed, instructions revised again
+			</h3>
+			<p>The first part of this exercise requires the creation of a data source, in this case a spreadsheet will be created.</p>
+
+			<ol>
+				<li>Open your GoogleDrive account</li>
+				<li>Create a new Google Sheets spreadsheet</li>
+				<li>Make sure to share your spreadsheet with anyone who has the link.  Only you and the professor will be able to view this data, unless you give the link to someone else:
+                    <br />
+					<img src="images/AddressDataSharing.JPG" class="img-fluid img-responsive img-rounded" alt="publish google doc" />
+					<br />
+				</li>
+				<li>Enter the following labels: </li>
+				<li>in cell B1: Street Address</li>
+				<li>in cell C1: City</li>
+				<li>in cell D1: State</li>
+				<li>in cell E1: Address</li>
+				<li>in cell F1: Rating (1 to 100)</li>
+				<li><strong>Enter at least 3 valid addresses</strong> into the spreadsheet. that you want to map. They must be in different states.</li>
+				<li>In the 'Address' column  <a href="http://dictionary.reference.com/browse/concatenate" class="bg-info text-white" target="_blank">concatenate</a> the  street address, city and state.<br />
+					The formula will look something like: <code>=B2&amp;&quot;,&quot;&amp;C2&amp;&quot; &quot;&amp;D2</code><br />
+					And the spreadsheet will look something like:<br />
+					<img src="images/GoogleSheetAddressData.JPG" class="img-fluid img-responsive img-rounded" alt="publish google doc" /><br />
+
+				</li>
+			</ol>
+			<p>
+				<strong>(100)</strong>  8.  Paste your concatenation formulata from cell E2 into the box below.<br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<input type="text" name="q8" id="q8" size="120" maxlength="120" class="form-control" value="formula:  " />
+			</p>
+
+
+			<br />
+
+			<p>The next part of this exercise creates a chart/map from the data entered into the spreadsheet.</p>
+
+			<ol>
+				<li>Insert a Map as a new page using data by selecting the data in columns E and F .<br />
+				</li>
+				<li>Note: choose Insert&gt;Chart... to bring up the Chart Editor  </li>
+				<li>Under the 'Chart types' tab scroll down to the 'Map' section...<br />
+				</li>
+				<li>Select &quot;Geo chart with markers&quot;<br />
+					<img src="images/GeoMap.jpg" class="img-responsive" alt="map" />
+					<br />
+				</li>
+				<li>Under the 'Customize' tab choose Geo&gt;Region&gt; select &#39;United States.&#39;<br />
+				</li>
+				<li>Make sure to put you chart on a separate sheet, click on the map of the United States, in the upper right corner clck on the down arrow, select "Move to own sheet..."<br />
+					<img src="images/ChartSepSheet.JPG" class="img-responsive" alt="map" />
+					<br />
+				</li>
+
+			</ol>
+
+
+			<p>
+				Experiment with different data points and settings, and examine the results.
+     <br />
+				<img src="images/DataAndChart.JPG" class="img-responsive" alt="map" />
+				<br />
+
+				When satisfied with your chart, publish Sheet1 and Chart1 to the web.
+			</p>
+			<p>
+				Next you will create hyperlinks to both of these Google Drive web pages.
+
+
+        
+			</p>
+
+			<!--Paste your iframe embed code above   -->
+
+
+
+
+
+
+
+
+
+			<p>The links to your spreadsheet will function something like these:</p>
+			<p><a href="https://docs.google.com/spreadsheets/d/10FCf8Qb_NgZLYwBkUuPpe9tlRW9opAp3YmktmedxQA4/edit?usp=sharing" target="_blank">Link to data on Google sheet </a>&nbsp;AddressData</p>
+
+			<p>
+				&nbsp;</p>
+			<hr />
+			<p>
+				<strong>Submit the url or hyperlinks to Sheet1 (data) and Chart1 (map) from Google Docs below.</strong>
+			</p>
+			<p>
+				ref: <a class="bg-info text-white" href="https://www.w3schools.com/tags/att_a_href.asp" target="_blank">Hyperlinks</a>
+			</p>
+			<p>
+				Note: In a web browser the urls in the address bar will look something like:<br />
+				https://docs.google.com/present/edit?id=0Aeu0JEemykWaZDl0NnJmNV81Nmhubm45c2hi&amp;hl=en)
+			</p>
+			<p>&nbsp;</p>
+
+			<div class="col-lg-12 ">
+
+				<p><strong>(100)</strong> 9.  Sheet1 </p>
+
+				<p>
+
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+					<input type="text" name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Sheet 1 url:  " />
+
+				</p>
+
+
+				<p>  <strong>(100)</strong> 10.  Chart1</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+				<p>	<input type="text" name="q10" id="q10" size="120" maxlength="120" class="form-control" value="Chart 1 url:  " /></p>
+				<hr />
+
+			</div>
+
+
+
+			<div></div>
+
+			<p>
+				Note that updating or changing your spreadsheet will cause new data to be displayed on your map. Hit F5 to refresh your map.
+                <br />
+				This <a href="https://docs.google.com/spreadsheet/ccc?key=0Auu0JEemykWadEUzZFlRVGtCM3gyajRybk12WVVETFE" class="bg-info text-white" target="_blank">spreadsheet</a> is updateable.  Feel free to change a new datapoint
+			</p>
+			<p>Other mashup resources:</p>
+			<p><a href="https://developers.google.com/maps/?hl=en" class="bg-info text-white" target="_blank">https://developers.google.com/maps/?hl=en</a></p>
+			<hr />
+			<hr />
+
+
+		</div>
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="Path2"></span></code>
+				' folder.<br />
+			</p>
+			<br />
+
+			<p>
+				<strong>(50)</strong>  11. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="Path3"></span></code>
+				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path20"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+			<p>
+				<strong>(50)</strong>  12. Save your file 'ScreenShots.pdf' to the ' 
+                <code><span id="Path4"></span></code>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill or PDF Preview(Mac) to merge the WebPage.pdf file with the ScreenShots.pdf file, and save it as &#39;Summative09.pdf&#39; in ' 
+                 <code><span id="Path5"></span></code>
+				' folder.<br />
+
+			</p>
+
+
+			<p><strong>(50)</strong>  13. Upload your file 'Summative09.pdf' to the D2L 'Summative09' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Summative09.pdf</h2>
+			</div>
+			<hr />
+
+		</div>
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			<strong>(50)</strong>  14. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			<strong>(50)</strong>  15. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>
