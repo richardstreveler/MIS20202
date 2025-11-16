@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+        PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+        Formative00 split into 3 separate html files instead of using tabs, too unwieldly
+		PgP 7/17/2020  Final version, with all updates for fall 2020
+		-->
+
+    <!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS202 Summative10</title>
+
+</head>
+
+
+<body>
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <h1 class=" text-center">Web Collaboration</h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative10"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            650 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+            <p>After completing this assignment you will be able to <strong>use</strong> various software applications to collaborate with others by:</p>
+            <ul>
+                <li>agreeing on a division of work items</li>
+                <li>using web conferencing software to share files</li>
+                <li>using web conferencing software to share desktops</li>
+            </ul>
+            <p>The exercises in this assignment must be done in the order presented.</p>
+            <hr />
+        </div>
+        <!-- -end-objectives-end -->
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+            <p><strong>This assignment requires working with others in this course.</strong></p>
+            <p>You are strongly advised to find seek out and meet with your group members the week before this assignment.  Review these instructions and plan on how you will complete this assignment.</p>
+            <p>The purpose of this assignment is to learn how businesses and other entities can conduct business at a distance using web conferencing and other internet based tools.</p>
+            <p>
+                The internet has provided tools to conduct business in ways not possible 10 years ago. Competitive advantage to a certain extent is based on how fast a business can execute a plan or strategy.
+                <br />
+                The power of web based collaboration should not be overlooked.
+                <br />
+                Becoming adept at collaborating with remotely located colleagues and clients will be expected by most businesses.Some items to consider   are:
+            </p>
+            <ul>
+                <li>Are we using the most effective tool set?</li>
+                <li>Does my business need to update it's technology?</li>
+                <li>What business opportunities may be lost if we do not use web collaboration?</li>
+                <li>What can collaboration technology and software do for our business?</li>
+            </ul>
+            <p>This assignment will explore ways to use web collaboration to simplify and expedite working at a distance. You are encouraged to explore on your own to find additional features that will make your life and present or future jobs easier.</p>
+            <hr />
+        </div>
+
+        <div class=" col-lg-12"><a href="#Preliminary" class="btn btn-info" data-toggle="collapse">Preliminary Instructions</a></div>
+
+        <div id="Preliminary" class="collapse in  col-lg-12">
+
+            <p>
+                Make sure that you are familiar with Google Earth and Google Maps as used in the last assignment.<br />
+
+                You will be using Google Drive, so make sure you can log into your account.<br />
+                Create a folder "MIS202Summative10" to save your work.<br />
+
+                <br />
+                This assignment highlights some of the problem solving skills and software tools you have learned in this course:
+            </p>
+            <ul>
+                <li>Google Sheets</li>
+                <li>Google Earth </li>
+                <li>Web Conferencing-Zoom
+                    <br />
+                </li>
+                <li>General computing and networking skills</li>
+            </ul>
+        </div>
+
+
+        <p><strong>Completing the Project-</strong>Read all instructions before proceeding!</p> 
+        <hr>
+
+
+		<hr>
+		<hr>
+
+            <h2>Record ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> to the proper course section</li>
+                <li>Create a new page, name it <code><span class="SummativeID"></span></code></li>
+                <li>Use the <strong>Snipping Tool</strong> to take required screenshots </li>
+                <li>Select the <strong>OneNote </strong> page, press <code>Ctrl + V</code> to paste the screenshot into OneNote</li>
+                <li>Label each screenshot clearly (e.g., "ScreenShot &hyphen; Ex10 &hyphen; select query showing all records from tblParks")</li>
+				<li>Save a copy of each screenshot to your '
+					<code><span id="Path15"></span></code>
+                    ' folder<br /></li>
+            </ol>
+        <hr>
+		<hr>
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Cloud Applications-Google Drive</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <p>
+                Each student will do all of the steps.<br />
+                Log into D2L to find your Summative10 group and group members, and exchange contact information-your choice.<br />
+                Setup Zoom-one group member creates a Zoom meeting room and invites all group members.<br />
+                Group members will use Zoom to complete the following tasks:
+            </p>
+            <p>
+                &nbsp;<br />
+                <strong>The group decides which student begins the exercise. 
+                    <br />
+                    That student opens up a blank PowerPoint presentation and creates a title slide with a title of: Google Map Mashup, and a second slide listing the names of all group members who are present.  Note the PowerPoint will be passed around to the different group members as they step through the exercise.  Make sure you know how to upload and download from the File Share pod.
+                </strong>
+            </p>
+
+            <ol>
+                <li>Create and share a Google Sheet document that captures the Street Address, City and State information, the same as Summative 9, Exercise 3.</li>
+                <li>Create a Geo chart with markers that places this data on a United States map.&nbsp;  </li>
+
+                <li>Publish your work-share with the members of your group.<br />
+                </li>
+            </ol>
+            <h2>Procedural Matters</h2>
+
+            <ol>
+
+                <li>The student doing step 1 (student 1)creates and shares the initial Google Sheets file with all the group members. If there are others in the meeting room, you can use Zoom to share your  screen so that others can see what you are doing.</li>
+                <li>The group chooses another student (student 2) to make screen shots as the work on the Google Sheet and the Geo Chart progresses-at least one screen shot of each.</li>
+                <li>Student 2 sends the screen shots to student 3, who puts these into a PowerPoint presentation documenting your work.</li>
+                <li>Feel free to use One Drive for Business, Google Drive or Zoom to work on the PowerPoint presentation together. </li>
+                <li>Make use of the web conferencing application tools to share files and chat/communicate.<br />
+                    Note that in Zoom, file sharing is accomplished using the Chat window.
+                </li>
+                <li><strong>The PowerPoint presentation will consist of:</strong><ol>
+                    <li><strong>Title slide listing all group members, the group number </strong></li>
+                    <li><strong>Slide containing a screen shot of the </strong>Google Sheet with data</li>
+                    <li>Slide containing a screen shot of the Google Chart with data</li>
+                    <li>Slide containing a screen shot of Zoom Meeting Window with Chat and Participant Windows</li>
+                    <li>Other slides you feel appropriate- the Zoom meeting, the use of Skype, IM, email or any other tool(s) used to complete this project, but that is not required. </li>
+                </ol>
+                </li>
+            </ol>
+            <p>
+                &nbsp;
+            </p>
+            <hr />
+            <h1>Deliverables</h1>
+            <p>
+                Each student will obtain a copy of the completed PowerPoint presentation.
+                <br />
+                Choose an appropriate PowerPoint design.
+            </p>
+            <p>
+                Print the PowerPoint as a pdf
+            </p>
+            <h1><strong>(250)</strong>1.  WebConfPowerPoint.pdf&nbsp;</h1>
+            <hr />
+
+            <h2><b>Questions</b></h2>
+            <p><b><strong>(50)</strong> 2. What was the most difficult aspect of this assignment? </b></p>
+            <p>
+                <b>
+
+                    <!-- Enter your answer in the VALUE field below   GROK -->
+                    <input type="text" name="q2" id="q2" size="120" maxlength="120" value="most difficult:  " />
+                </b>
+            </p>
+            <p>&nbsp;</p>
+            <p><b><strong>(50)</strong> 3. What was the most enjoyable aspect of this assignment?</b></p>
+            <p>
+                <b>
+
+                    <!-- Enter your answer in the VALUE field below   GROK -->
+                    <input type="text" name="q3" id="q3" size="120" maxlength="120" value="most enjoyable:  " />
+                </b>
+            </p>
+            <p>&nbsp;</p>
+            <p><b><strong>(50)</strong> 4. List 4 ways in which businesses can make effective use of collaboration tools.</b></p>
+            <p>
+                <b>
+
+                    <!-- Enter your answer in the VALUE field below   GROK -->
+                    <input type="text" name="q4" id="q4" size="120" maxlength="120" value="1.   ; 2.   ; 3.   ; 4.   " />
+                </b>
+            </p>
+            <p>&nbsp;</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <p><b><strong>(50)</strong> 5. Based on your experience with this assignment, list a 'collaboration-centric' issue that businesses and their employees will have to deal with? Briefly explain. </b></p>
+            <p>
+                <b>
+                    <input type="text" name="q5" id="q5" size="120" maxlength="120" value="collaboration issue:  " />
+                </b>
+            </p>
+            <hr />
+
+
+
+        </div>
+        <div class="col-lg-12 text-danger">
+            <h2>WebConfPowerPoint.pdf</h2>
+            <hr />
+        </div>
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="Path1"></span></code>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                <strong>(50)</strong> 6. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="Path2"></span></code>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+            <div class="text-danger">
+            </div>
+
+
+			<ol>
+				<li> Open File Explorer and navigate to your  '
+                
+				<code><span id="Path14"></span></code>
+				' folder.</li>
+
+				<li>Drag the  &#39; WebPage.pdf &#39; file into your OneNote section and page for this assignment, choosing &#39; Insert Printout &#39; from the pop-up menu
+					</li>
+
+			<li>
+				From the OneNote menu choose File &gt; Print &gt; Print to save this file containing your screenshots and this completed webpage as &#39;<strong><span class="SummativeID"></span>.pdf</strong>&#39; in ' 
+                
+				<code><span id="Path9"></span></code>
+				' folder.<br />
+
+			</li>
+
+			<li><strong>(100)</strong> 7. Upload your completed '<span class="SummativeID"></span>' file &hyphen; containing your screenshots and the webpage.pdf files &hyphen;  to the D2L '<span class="SummativeID"></span>' Assignment folder.</li>
+
+				</ol>
+
+
+
+
+
+			<div class="text-danger">
+				<h2><span class="SummativeID"></span>.pdf</h2>
+			</div>
+			<hr />
+
+		</div>
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <ol>
+                <li>Use a browser to view your completed and published website at: https://classes.winona.edu/... 
+                </li>
+                <li>Ensure that you have correctly linked this assignment on your home page.
+                    <br>
+                    Note that your screenshots do not have to be completed to perform this exercise.
+                </li>
+                <li><strong>(50)</strong> 8. Home Page Hyperlink<br />
+                    Check and verify that this assignment is hyperlinked on your home page.</li>
+
+                <li><strong>(50)</strong> 9. Assignment submission<br />
+                    Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+                </li>
+            </ol>
+
+            <br />
+
+        </div>
+
+		<hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>
