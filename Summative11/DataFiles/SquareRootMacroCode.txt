@@ -1,0 +1,8 @@
+Sub mcrSquareRoot()
+'
+' mcrSquareRoot Macro
+' return square root
+'
+        ActiveCell.FormulaR1C1 = ActiveCell.FormulaR1C1 ^ 0.5
+   
+End Sub
